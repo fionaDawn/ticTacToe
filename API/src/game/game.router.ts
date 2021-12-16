@@ -15,7 +15,7 @@ export const gamesRouter = express.Router();
 // GET items
 gamesRouter.get("/", async (req: Request, res: Response) => {
     try {
-        const items: Game[] = await GameService.findAll();
+        const items: Game[] = await GameService.findAllGames();
 
         res.status(200).send(items);
     } catch (e) {
@@ -27,8 +27,8 @@ gamesRouter.get("/", async (req: Request, res: Response) => {
 gamesRouter.get("/:id", async (req: Request, res: Response) => {
     const id: number = parseInt(req.params.id, 10);
     try {
-        const item: Game = await GameService.findById(id);
-
+        const item: Game = await GameService.findGameById(id);
+        console.log(item)
         if (item) {
             return res.status(200).send(item);
         }
@@ -43,7 +43,7 @@ gamesRouter.get("/:id", async (req: Request, res: Response) => {
 gamesRouter.post("/", async (req: Request, res: Response) => {
     try {
         const item: BaseGame = req.body;
-        const newItem = await GameService.create(item.boardSize, item.currentPlayer);
+        const newItem = await GameService.startGame(item.boardSize, item.currentPlayer);
 
         res.status(201).json(newItem);
     } catch (e) {
@@ -57,7 +57,7 @@ gamesRouter.put("/:id", async (req: Request, res: Response) => {
 
     try {
         const updatedGame: GameRequest = req.body;
-        const updatedItem = await GameService.move(id, updatedGame);
+        const updatedItem = await GameService.playerMove(id, updatedGame);
 
         if (updatedItem) return res.status(200).json(updatedItem);
         else res.status(404).send("game not found");

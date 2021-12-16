@@ -1,6 +1,7 @@
 import { Player } from "../player/player.type";
 
-export type XOstr = 'X' | 'O' | '';
+export type XOstr = 'X' | 'O';
+
 export interface BaseGame {
   // positions: Array<number[]>;
   boardSize: number,
@@ -10,7 +11,7 @@ export interface BaseGame {
   blockedPositions: string[];
   // winner is empty string by default. If there's 
   // a winner, current game is over
-  winner: XOstr;
+  winner: string;
 }
 
 export interface Game extends BaseGame {

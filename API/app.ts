@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/games", gamesRouter);
 
 
-const port = 3000;
+const port = 3001;
 
 app.listen(port, () => {
     console.log(`Timezones by location application is running on port ${port}.`);
