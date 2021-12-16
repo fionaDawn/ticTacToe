@@ -75,11 +75,11 @@ const Game: React.FC = () => {
                 Current Player: {currentPlayer}
             </label>
         </div>
-        {winner ? <div className="absolute m-auto bg-red-900 p-14">
+        {/* {winner ? <div className="absolute m-auto bg-red-900 p-14">
             <label className="block text-white text-lg font-bold mb-2">
                 Congratulations Player {winner}!
             </label>
-        </div> : null}
+        </div> : null} */}
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             {boardSize ?
                 <Grid

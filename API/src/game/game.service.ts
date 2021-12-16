@@ -73,12 +73,13 @@ export const playerMove = async (id: number, updatedGame: GameRequest): Promise<
         // check for diagonal match 
         // top-left to bottom right: all index positions are equal
         hasWinningPosition = hasTopLeftToBottomRightDiagonal(positions, boardSize);
+        console.log("DIagonal 1", hasWinningPosition)
         // bottom-left to top right: all sum of positions are equal
         if (!hasWinningPosition) hasWinningPosition = hasTopRightToBottomLeftDiagonal(positions, boardSize);
-
+        console.log("DIagonal 2", hasWinningPosition)
         // check for horizontal and vertical match
         // we do this together so we iterate on boardSize only once
-        if (!hasWinningPosition) hasWinningPosition = hasStraightLineMatch(hasWinningPosition, boardSize, positions);
+        if (!hasWinningPosition) hasWinningPosition = hasStraightLineMatch(boardSize, positions);
     }
 
     if (hasWinningPosition) currGame.winner = currentPlayer;

@@ -7,7 +7,8 @@ export const isNewPositionTaken = (blockedPositions, newPosition): boolean =>
 export const isGameDraw = (blockedPositions, boardSize): boolean =>
     blockedPositions.length === (boardSize * boardSize);
 
-export const hasStraightLineMatch = (hasWinningPosition, boardSize, positions) =>
+export const hasStraightLineMatch = (boardSize, positions) => {
+    let hasWinningPosition = false;
     Array.from(Array(boardSize).keys()).every(idx => {
         if (hasWinningPosition) return false;
 
@@ -20,6 +21,8 @@ export const hasStraightLineMatch = (hasWinningPosition, boardSize, positions) =
 
         return true;
     })
+    return hasWinningPosition;
+}
 
 export const hasTopLeftToBottomRightDiagonal = (positions, boardSize) =>
     positions.filter(p => p.charAt(0) === p.charAt(1)).length === boardSize;
