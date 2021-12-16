@@ -26,7 +26,7 @@ Build a frontend for your game, anyway you like, and have the full stack operati
 - go to the API folder e.g. `cd API/`
 - run `yarn run dev`
 - After that you’ll be able make requests to http://localhost:3001/
-- API Documentation can be found here
+- API Documentation can be found [here](https://github.com/fionaDawn/ticTacToe/blob/api-docs/API/README.md)
 
 #### Frontend
 - go to the fronten folder e.g. `cd frontend/`
