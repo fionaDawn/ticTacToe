@@ -4,13 +4,16 @@
 Create a backend API that provides the necessary capabilities to support the game of Tic Tac Toe or Naughts and Crosses
 
 ### Basic user stories
-• As an API user I should be able to create a new tic tac toe game session
-• As an API user I should be able to complete a turn as the crosses (X) player
-• As an API user I should be able to complete a turn as the naughts (O) player
-• As an API user when I make a winning move, I should be informed and the game should be completed with a win status
+- As an API user I should be able to create a new tic tac toe game session
+- As an API user I should be able to complete a turn as the crosses (X) player
+- As an API user I should be able to complete a turn as the naughts (O) player
+- As an API user when I make a winning move, I should be informed and the game should be completed with a win status
 
 #### Option 3: Front end
 Build a frontend for your game, anyway you like, and have the full stack operational
+
+### [Trello board](https://trello.com/b/Fndd8nNr/tictactoe)
+
 
 # Solution
 
@@ -26,7 +29,7 @@ Build a frontend for your game, anyway you like, and have the full stack operati
 - go to the API folder e.g. `cd API/`
 - run `yarn run dev`
 - After that you’ll be able make requests to http://localhost:3001/
-- API Documentation can be found here
+- API Documentation can be found [here](https://github.com/fionaDawn/ticTacToe/blob/api-docs/API/README.md)
 
 #### Frontend
 - go to the fronten folder e.g. `cd frontend/`
