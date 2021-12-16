@@ -6,14 +6,14 @@ export type XOstr = 'X' | 'O' | '';
 
 export interface BaseGame {
     // positions: Array<number[]>;
-    boardSize?: number,
-    players?: Player,
-    currentPlayer?: XOstr;
+    boardSize: number,
+    players: Player,
+    currentPlayer: XOstr;
     // blockedPositions: Array<number[]>;
-    blockedPositions?: string[];
+    blockedPositions: string[];
     // winner is empty string by default. If there's 
     // a winner, current game is over
-    winner?: XOstr;
+    winner: XOstr;
 }
 
 export interface Game extends BaseGame {
@@ -22,7 +22,7 @@ export interface Game extends BaseGame {
 
 export type Player = {
     // [key in XOstr]?: Array<number[]>;
-    [key in XOstr]?: string[];
+    [key in XOstr]: string[];
 };
 
 export type GridProps = {

@@ -16,7 +16,6 @@ const Home: React.FC<GameRequestProps> = () => {
     }
 
     const handleClick = async (e: React.FormEvent<HTMLButtonElement>) => {
-        console.log(form)
         const game: Game = await start(form);
         if (game.id) navigate(`/game/${game.id}`)
     }
