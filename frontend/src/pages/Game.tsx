@@ -60,7 +60,6 @@ const Game: React.FC = () => {
                 const currIdx: number = list.findIndex(v => v.value === position)
                 list[currIdx] = { display: currentPlayer || '', value: position }
                 setList(list)
-
                 setGame(response)
             } else alert(response)
         }
@@ -76,9 +75,9 @@ const Game: React.FC = () => {
                 Current Player: {currentPlayer}
             </label>
         </div>
-        {winner ? <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-                WINNER!: {winner}
+        {winner ? <div className="absolute m-auto bg-red-900 p-14">
+            <label className="block text-white text-lg font-bold mb-2">
+                Congratulations Player {winner}!
             </label>
         </div> : null}
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
