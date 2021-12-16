@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { fetchGameById, playerClickAction } from "../api/Game";
 import Grid from "../components/Grid";
 import { Game as GameProps, GridProps } from "../types/Game";
 
 const Game: React.FC = () => {
     const { pathname } = useLocation()
+    const navigate = useNavigate();
 
     // store game information and any changes retrieved from API
     const [game, setGame] = useState<GameProps>({} as GameProps);
@@ -69,23 +70,21 @@ const Game: React.FC = () => {
 
     const { boardSize, currentPlayer, winner } = game;
 
-    return <div className="w-full" >
-        <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
+    return <div className="flex flex-col items-center justify-center m-20">
+
+        <div className="flex flex-col  justify-center items-center bg-white shadow-md rounded px-8 pt-4 pb-8 mb-4">
+            {winner ? <div className="mb-2 text-gray-900 text-lg font-bold bg-amber-300 p-4">
+                WINNER: Player {winner}!
+            </div> : <div className="mb-2 text-gray-700 text-sm font-bold">
                 Current Player: {currentPlayer}
-            </label>
-        </div>
-        {/* {winner ? <div className="absolute m-auto bg-red-900 p-14">
-            <label className="block text-white text-lg font-bold mb-2">
-                Congratulations Player {winner}!
-            </label>
-        </div> : null} */}
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            {boardSize ?
+            </div>}
+
+            {boardSize && !winner ?
                 <Grid
                     list={list}
                     size={boardSize}
                     handleSquareClick={handleSquareClick} /> : null}
+            <button className="mt-4 bg-orange-900 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => navigate("/")}>Reset</button>
         </div>
     </div >
 

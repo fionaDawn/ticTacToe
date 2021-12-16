@@ -9,10 +9,19 @@ type GridComponentProps = {
 
 const Grid: React.FC<GridComponentProps> = (props: GridComponentProps) => {
     const { size, list, handleSquareClick } = props;
-    return <div className={`grid grid-cols-${size}`}>
-        {list.map((grid: GridProps) =>
-            <Square key={grid.value} grid={grid} handleSquareClick={handleSquareClick} />
-        )}
+    let arr = [...list];
+    let result = [];
+    while (arr.length > 0) {
+        result.push(
+            <div className="flex align-center justify-center">
+                {arr.splice(0, size).map((grid: GridProps) =>
+                    <Square key={grid.value} grid={grid} handleSquareClick={handleSquareClick} />
+                )}
+            </div>
+        )
+    }
+    return <div>
+        {result}
     </div >
 }
 

@@ -7,9 +7,9 @@ type SquareComponentProps = {
 
 const Square: React.FC<SquareComponentProps> = (props: SquareComponentProps) => {
     const { grid, handleSquareClick } = props;
-    return <button className="border-2 border-gray-400 h-36"
+    return <button className="border-2 border-orange-900 bg-orange-300 h-20 w-20"
         onClick={() => handleSquareClick(grid.value)}>
-        <h1 className="text-lg">{grid.display}</h1>
+        <h1 className="text-xl text-orange-900">{grid.display}</h1>
     </button>
 }
 
