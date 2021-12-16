@@ -28,7 +28,7 @@ gamesRouter.get("/:id", async (req: Request, res: Response) => {
     const id: number = parseInt(req.params.id, 10);
     try {
         const item: Game = await GameService.findById(id);
-
+        console.log(item)
         if (item) {
             return res.status(200).send(item);
         }

@@ -39,7 +39,7 @@ export const create = async (boardSize: number = 3, firstPlayer: XOstr = "X"): P
 export const move = async (id: number, updatedGame: GameRequest): Promise<Game> => {
     const { newPosition } = updatedGame;
     // get the current game session
-    let currGame = await findById(id);
+    let currGame: Game = await findById(id);
     if (!currGame) throw new Error("game does not exist")
     if (currGame.winner) throw new Error("this game was already won by player " + currGame.winner)
     const { boardSize, blockedPositions, currentPlayer } = currGame;
