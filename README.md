@@ -23,16 +23,18 @@ Build a frontend for your game, anyway you like, and have the full stack operati
 - PORTS 3000 and 3001 are available to use
 
 ### How to run locally?
-- Clone this repo
+- Clone this repo and go to that folder
 
 #### API
 - go to the API folder e.g. `cd API/`
+- run `yarn install`
 - run `yarn run dev`
 - After that you’ll be able make requests to http://localhost:3001/
 - API Documentation can be found [here](https://github.com/fionaDawn/ticTacToe/blob/api-docs/API/README.md)
 
 #### Frontend
-- go to the fronten folder e.g. `cd frontend/`
+- go to the frontend folder e.g. `cd frontend/`
+- run `yarn install`
 - run `yarn start`
 - After that may access the game by typing in  http://localhost:3000/ on your browser
 
